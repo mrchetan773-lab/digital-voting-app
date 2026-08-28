@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/digital_voting')
+// Connect to MongoDB (Atlas via .env or local fallback)
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/digital_voting';
+mongoose.connect(MONGO_URI)
   .then(() => console.log('[DB] Connected to MongoDB'))
   .catch(err => console.error('[DB] MongoDB Connection Error:', err));
 
@@ -24,16 +26,18 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Copy the generated background image if it exists in the brain folder
-const bgSrc = 'C:/Users/mrche/.gemini/antigravity/brain/dc5fc996-9526-4c28-bb41-9676a6fef3a5/voting_ballot_bg_1787305102995.jpg';
-const bgDest = path.join(__dirname, 'public', 'voting_background.jpg');
-try {
-  if (fs.existsSync(bgSrc)) {
-    fs.copyFileSync(bgSrc, bgDest);
-    console.log('[Setup] Background image successfully copied to public/voting_background.jpg');
+// Background image setup (local dev only)
+if (!process.env.VERCEL) {
+  const bgSrc = 'C:/Users/mrche/.gemini/antigravity/brain/dc5fc996-9526-4c28-bb41-9676a6fef3a5/voting_ballot_bg_1787305102995.jpg';
+  const bgDest = path.join(__dirname, 'public', 'voting_background.jpg');
+  try {
+    if (fs.existsSync(bgSrc)) {
+      fs.copyFileSync(bgSrc, bgDest);
+      console.log('[Setup] Background image successfully copied to public/voting_background.jpg');
+    }
+  } catch (e) {
+    console.error('[Setup] Failed to copy background image:', e.message);
   }
-} catch (e) {
-  console.error('[Setup] Failed to copy background image:', e.message);
 }
 
 // ─────────────────────────────────────────────
@@ -75,10 +79,14 @@ function generateMembers() {
     });
   }
 
-  if (!fs.existsSync(path.join(__dirname, 'data'))) {
-    fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
+  try {
+    if (!fs.existsSync(path.join(__dirname, 'data'))) {
+      fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
+    }
+    fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2));
+  } catch (e) {
+    console.error('[Setup] Failed to write members.json (read-only filesystem):', e.message);
   }
-  fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2));
   return members;
 }
 
@@ -87,7 +95,7 @@ if (fs.existsSync(MEMBERS_PATH)) {
   members = JSON.parse(fs.readFileSync(MEMBERS_PATH, 'utf8'));
   if (members.length > 0 && members[0].phone !== '9876543210') {
     members[0].phone = '9876543210';
-    fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2));
+    try { fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2)); } catch (e) { /* read-only on Vercel */ }
   }
 } else {
   members = generateMembers();
@@ -458,7 +466,7 @@ app.post('/api/member/update', (req, res) => {
 
   if (email)   member.email   = email;
   if (address) member.address = address;
-  fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2));
+  try { fs.writeFileSync(MEMBERS_PATH, JSON.stringify(members, null, 2)); } catch (e) { /* read-only on Vercel */ }
   res.json({ success: true, member });
 });
 
@@ -821,10 +829,18 @@ app.post('/api/admin/settings', adminAuth, (req, res) => {
 // ─────────────────────────────────────────────
 // START SERVER
 // ─────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n  ╔══════════════════════════════════════════╗`);
-  console.log(`  ║   Digital Voting App — Running           ║`);
-  console.log(`  ║   http://localhost:${PORT}                  ║`);
-  console.log(`  ║   Members loaded: ${String(members.length).padEnd(22)}║`);
-  console.log(`  ╚══════════════════════════════════════════╝\n`);
-});
+const LISTEN_PORT = process.env.PORT || PORT;
+
+// Only listen when not running on Vercel (Vercel handles this automatically)
+if (!process.env.VERCEL) {
+  app.listen(LISTEN_PORT, () => {
+    console.log(`\n  ╔══════════════════════════════════════════╗`);
+    console.log(`  ║   Digital Voting App — Running           ║`);
+    console.log(`  ║   http://localhost:${LISTEN_PORT}                  ║`);
+    console.log(`  ║   Members loaded: ${String(members.length).padEnd(22)}║`);
+    console.log(`  ╚══════════════════════════════════════════╝\n`);
+  });
+}
+
+// Export for Vercel serverless
+module.exports = app;
