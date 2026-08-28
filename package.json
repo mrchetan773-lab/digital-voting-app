@@ -1,0 +1,16 @@
+{
+  "name": "digital-voting-app",
+  "version": "1.0.0",
+  "description": "Digital Voting Web Application for Life Members",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "mongodb-memory-server": "^11.2.0",
+    "mongoose": "^9.9.4",
+    "nodemailer": "^9.0.5"
+  }
+}

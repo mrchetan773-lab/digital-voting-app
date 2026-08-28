@@ -1,0 +1,806 @@
+[
+  {
+    "id": "LM0001",
+    "name": "Rohit Singh",
+    "phone": "9876543210",
+    "email": "",
+    "address": "",
+    "hasVoted": true,
+    "hasVotedRural": true,
+    "hasVotedUrban": true
+  },
+  {
+    "id": "LM0003",
+    "name": "Sanjay Deshmukh",
+    "phone": "9664050009",
+    "email": "sanjay.deshmukh3@email.com",
+    "address": "116, Sector 6",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0004",
+    "name": "Sanjay Nair",
+    "phone": "9342214031",
+    "email": "sanjay.nair4@email.com",
+    "address": "401, Sector 31",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0005",
+    "name": "Vinod Kulkarni",
+    "phone": "9759555156",
+    "email": "vinod.kulkarni5@email.com",
+    "address": "255, Sector 14",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0006",
+    "name": "Rajesh Sharma",
+    "phone": "9206124181",
+    "email": "rajesh.sharma6@email.com",
+    "address": "47, Sector 42",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0007",
+    "name": "Vikram Chauhan",
+    "phone": "9575812373",
+    "email": "vikram.chauhan7@email.com",
+    "address": "21, Sector 42",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0008",
+    "name": "Ravi Joshi",
+    "phone": "9975509028",
+    "email": "ravi.joshi8@email.com",
+    "address": "408, Sector 19",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0009",
+    "name": "Vikram Gupta",
+    "phone": "9327723117",
+    "email": "",
+    "address": "276, Sector 17",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0010",
+    "name": "Jaya Verma",
+    "phone": "9308969615",
+    "email": "",
+    "address": "176, Sector 4",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0011",
+    "name": "Lata Banerjee",
+    "phone": "9694648171",
+    "email": "lata.banerjee11@email.com",
+    "address": "235, Sector 31",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0012",
+    "name": "Manoj Nair",
+    "phone": "9947752921",
+    "email": "manoj.nair12@email.com",
+    "address": "151, Sector 44",
+    "hasVoted": true,
+    "hasVotedRural": true,
+    "hasVotedUrban": true
+  },
+  {
+    "id": "LM0013",
+    "name": "Kavita Gupta",
+    "phone": "9894571220",
+    "email": "kavita.gupta13@email.com",
+    "address": "96, Sector 5",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0014",
+    "name": "Geeta Gupta",
+    "phone": "9793079856",
+    "email": "",
+    "address": "478, Sector 36",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0015",
+    "name": "Sanjay Rao",
+    "phone": "9475714111",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0016",
+    "name": "Arun Pillai",
+    "phone": "9235902011",
+    "email": "arun.pillai16@email.com",
+    "address": "303, Sector 41",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0017",
+    "name": "Vivek Verma",
+    "phone": "9493388530",
+    "email": "vivek.verma17@email.com",
+    "address": "370, Sector 24",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0018",
+    "name": "Geeta Iyer",
+    "phone": "9643295811",
+    "email": "geeta.iyer18@email.com",
+    "address": "132, Sector 38",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0019",
+    "name": "Rahul Kulkarni",
+    "phone": "9958056642",
+    "email": "",
+    "address": "419, Sector 5",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0020",
+    "name": "Lata Nair",
+    "phone": "9581826247",
+    "email": "lata.nair20@email.com",
+    "address": "432, Sector 11",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0021",
+    "name": "Kavita Mishra",
+    "phone": "9759658159",
+    "email": "kavita.mishra21@email.com",
+    "address": "342, Sector 37",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0022",
+    "name": "Jaya Deshmukh",
+    "phone": "9295285118",
+    "email": "jaya.deshmukh22@email.com",
+    "address": "381, Sector 16",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0024",
+    "name": "Vikram Patel",
+    "phone": "9724764337",
+    "email": "vikram.patel24@email.com",
+    "address": "31, Sector 36",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0025",
+    "name": "Jaya Kulkarni",
+    "phone": "9543565307",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0026",
+    "name": "Vikram Das",
+    "phone": "9811741421",
+    "email": "vikram.das26@email.com",
+    "address": "357, Sector 32",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0027",
+    "name": "Swati Hegde",
+    "phone": "9220693214",
+    "email": "swati.hegde27@email.com",
+    "address": "235, Sector 5",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0028",
+    "name": "Priya Iyer",
+    "phone": "9197218038",
+    "email": "priya.iyer28@email.com",
+    "address": "159, Sector 14",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0029",
+    "name": "Vivek Das",
+    "phone": "9757385840",
+    "email": "vivek.das29@email.com",
+    "address": "210, Sector 7",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0030",
+    "name": "Suresh Hegde",
+    "phone": "9234962312",
+    "email": "suresh.hegde30@email.com",
+    "address": "456, Sector 11",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0031",
+    "name": "Neha Shah",
+    "phone": "9806867015",
+    "email": "neha.shah31@email.com",
+    "address": "279, Sector 48",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0032",
+    "name": "Asha Yadav",
+    "phone": "9486544080",
+    "email": "",
+    "address": "223, Sector 49",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0033",
+    "name": "Rajesh Saxena",
+    "phone": "9740056187",
+    "email": "",
+    "address": "363, Sector 26",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0034",
+    "name": "Nitin Sharma",
+    "phone": "9455650575",
+    "email": "nitin.sharma34@email.com",
+    "address": "448, Sector 14",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0035",
+    "name": "Vinod Kulkarni",
+    "phone": "9727796845",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0036",
+    "name": "Swati Rao",
+    "phone": "9397681074",
+    "email": "swati.rao36@email.com",
+    "address": "155, Sector 1",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0037",
+    "name": "Kavita Joshi",
+    "phone": "9159277473",
+    "email": "kavita.joshi37@email.com",
+    "address": "432, Sector 6",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0038",
+    "name": "Jaya Banerjee",
+    "phone": "9677610978",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0039",
+    "name": "Swati Mehta",
+    "phone": "9810160003",
+    "email": "swati.mehta39@email.com",
+    "address": "192, Sector 8",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0040",
+    "name": "Vinod Verma",
+    "phone": "9348544716",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0041",
+    "name": "Nitin Hegde",
+    "phone": "9878437114",
+    "email": "",
+    "address": "310, Sector 33",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0042",
+    "name": "Rohit Yadav",
+    "phone": "9957752016",
+    "email": "rohit.yadav42@email.com",
+    "address": "479, Sector 1",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0043",
+    "name": "Deepak Kumar",
+    "phone": "9304848995",
+    "email": "",
+    "address": "401, Sector 11",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0044",
+    "name": "Priya Pillai",
+    "phone": "9634871366",
+    "email": "priya.pillai44@email.com",
+    "address": "49, Sector 35",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0045",
+    "name": "Suresh Yadav",
+    "phone": "9170904884",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0046",
+    "name": "Manoj Iyer",
+    "phone": "9472059720",
+    "email": "manoj.iyer46@email.com",
+    "address": "210, Sector 25",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0047",
+    "name": "Ravi Rao",
+    "phone": "9782584105",
+    "email": "ravi.rao47@email.com",
+    "address": "406, Sector 40",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0048",
+    "name": "Arun Mishra",
+    "phone": "9102967505",
+    "email": "arun.mishra48@email.com",
+    "address": "112, Sector 11",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0049",
+    "name": "Sapna Chauhan",
+    "phone": "9347183898",
+    "email": "",
+    "address": "440, Sector 43",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0050",
+    "name": "Geeta Iyer",
+    "phone": "9281109125",
+    "email": "geeta.iyer50@email.com",
+    "address": "29, Sector 48",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0051",
+    "name": "Asha Tiwari",
+    "phone": "9968833130",
+    "email": "asha.tiwari51@email.com",
+    "address": "177, Sector 16",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0052",
+    "name": "Vivek Kulkarni",
+    "phone": "9208900073",
+    "email": "vivek.kulkarni52@email.com",
+    "address": "380, Sector 27",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0053",
+    "name": "Meena Iyer",
+    "phone": "9462271612",
+    "email": "meena.iyer53@email.com",
+    "address": "398, Sector 36",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0054",
+    "name": "Kavita Tiwari",
+    "phone": "9299587359",
+    "email": "kavita.tiwari54@email.com",
+    "address": "478, Sector 24",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0055",
+    "name": "Kiran Pandey",
+    "phone": "9909806118",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0056",
+    "name": "Neha Mishra",
+    "phone": "9602101877",
+    "email": "neha.mishra56@email.com",
+    "address": "318, Sector 2",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0057",
+    "name": "Neha Hegde",
+    "phone": "9599760665",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0058",
+    "name": "Pooja Banerjee",
+    "phone": "9986578702",
+    "email": "pooja.banerjee58@email.com",
+    "address": "189, Sector 13",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0059",
+    "name": "Vikram Deshmukh",
+    "phone": "9686861269",
+    "email": "",
+    "address": "218, Sector 35",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0060",
+    "name": "Rajesh Rathore",
+    "phone": "9438629480",
+    "email": "rajesh.rathore60@email.com",
+    "address": "121, Sector 40",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0061",
+    "name": "Ashok Mehta",
+    "phone": "9670546364",
+    "email": "ashok.mehta61@email.com",
+    "address": "86, Sector 15",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0062",
+    "name": "Arun Pillai",
+    "phone": "9409218678",
+    "email": "",
+    "address": "411, Sector 35",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0063",
+    "name": "Kavita Bhatia",
+    "phone": "9361702138",
+    "email": "kavita.bhatia63@email.com",
+    "address": "397, Sector 7",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0064",
+    "name": "Kiran Saxena",
+    "phone": "9853022230",
+    "email": "",
+    "address": "212, Sector 39",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0065",
+    "name": "Rohit Patel",
+    "phone": "9212405325",
+    "email": "rohit.patel65@email.com",
+    "address": "125, Sector 36",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0066",
+    "name": "Sanjay Mishra",
+    "phone": "9749326187",
+    "email": "sanjay.mishra66@email.com",
+    "address": "269, Sector 48",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0067",
+    "name": "Ashok Reddy",
+    "phone": "9188602907",
+    "email": "ashok.reddy67@email.com",
+    "address": "266, Sector 12",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0068",
+    "name": "Meena Yadav",
+    "phone": "9767167118",
+    "email": "meena.yadav68@email.com",
+    "address": "187, Sector 43",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0069",
+    "name": "Pooja Shah",
+    "phone": "9698175020",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0070",
+    "name": "Rahul Pandey",
+    "phone": "9735969604",
+    "email": "rahul.pandey70@email.com",
+    "address": "117, Sector 17",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0071",
+    "name": "Rajesh Das",
+    "phone": "9130326042",
+    "email": "rajesh.das71@email.com",
+    "address": "338, Sector 37",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0072",
+    "name": "Asha Saxena",
+    "phone": "9360123894",
+    "email": "asha.saxena72@email.com",
+    "address": "373, Sector 7",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0073",
+    "name": "Swati Pandey",
+    "phone": "9874858973",
+    "email": "swati.pandey73@email.com",
+    "address": "127, Sector 40",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0074",
+    "name": "Rajesh Gupta",
+    "phone": "9216204883",
+    "email": "rajesh.gupta74@email.com",
+    "address": "320, Sector 47",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0075",
+    "name": "Vivek Reddy",
+    "phone": "9211593082",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0076",
+    "name": "Priya Verma",
+    "phone": "9106803610",
+    "email": "priya.verma76@email.com",
+    "address": "124, Sector 28",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0077",
+    "name": "Amit Banerjee",
+    "phone": "9736022604",
+    "email": "amit.banerjee77@email.com",
+    "address": "35, Sector 1",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0078",
+    "name": "Jaya Jain",
+    "phone": "9948072835",
+    "email": "",
+    "address": "458, Sector 45",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0079",
+    "name": "Arun Sharma",
+    "phone": "9785004928",
+    "email": "",
+    "address": "351, Sector 27",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0080",
+    "name": "Rohit Kulkarni",
+    "phone": "9909787096",
+    "email": "rohit.kulkarni80@email.com",
+    "address": "68, Sector 30",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0081",
+    "name": "Asha Patel",
+    "phone": "9722897924",
+    "email": "asha.patel81@email.com",
+    "address": "192, Sector 39",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0082",
+    "name": "Vinod Verma",
+    "phone": "9778359097",
+    "email": "vinod.verma82@email.com",
+    "address": "254, Sector 26",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0083",
+    "name": "Suresh Mehta",
+    "phone": "9961897770",
+    "email": "suresh.mehta83@email.com",
+    "address": "66, Sector 33",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0084",
+    "name": "Priya Rathore",
+    "phone": "9893239832",
+    "email": "priya.rathore84@email.com",
+    "address": "137, Sector 33",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0085",
+    "name": "Rahul Sharma",
+    "phone": "9717189190",
+    "email": "rahul.sharma85@email.com",
+    "address": "183, Sector 13",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0086",
+    "name": "Nitin Deshmukh",
+    "phone": "9109606974",
+    "email": "nitin.deshmukh86@email.com",
+    "address": "377, Sector 13",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0087",
+    "name": "Jaya Iyer",
+    "phone": "9478873982",
+    "email": "jaya.iyer87@email.com",
+    "address": "386, Sector 15",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0088",
+    "name": "Priya Sharma",
+    "phone": "9924575627",
+    "email": "",
+    "address": "85, Sector 48",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0089",
+    "name": "Geeta Patel",
+    "phone": "9565013723",
+    "email": "geeta.patel89@email.com",
+    "address": "428, Sector 20",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0090",
+    "name": "Kavita Joshi",
+    "phone": "9920223264",
+    "email": "",
+    "address": "88, Sector 12",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0091",
+    "name": "Sunita Patel",
+    "phone": "9413268639",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0092",
+    "name": "Jaya Nair",
+    "phone": "9662608486",
+    "email": "jaya.nair92@email.com",
+    "address": "235, Sector 37",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0093",
+    "name": "Swati Kulkarni",
+    "phone": "9111850455",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0094",
+    "name": "Swati Agarwal",
+    "phone": "9866486929",
+    "email": "swati.agarwal94@email.com",
+    "address": "44, Sector 6",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0095",
+    "name": "Meena Bhatia",
+    "phone": "9232835875",
+    "email": "meena.bhatia95@email.com",
+    "address": "256, Sector 27",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0096",
+    "name": "Amit Joshi",
+    "phone": "9944976614",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0097",
+    "name": "Anita Nair",
+    "phone": "9296666029",
+    "email": "anita.nair97@email.com",
+    "address": "199, Sector 49",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0099",
+    "name": "Jaya Tiwari",
+    "phone": "9432393302",
+    "email": "jaya.tiwari99@email.com",
+    "address": "323, Sector 16",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0100",
+    "name": "Nitin Verma",
+    "phone": "9676504502",
+    "email": "nitin.verma100@email.com",
+    "address": "7, Sector 6",
+    "hasVoted": false
+  },
+  {
+    "id": "LM0101",
+    "name": "BROOK",
+    "phone": "6666666666",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM000566",
+    "name": "CR",
+    "phone": "90088156",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  },
+  {
+    "id": "LM009445",
+    "name": "BROOK",
+    "phone": "9008815612",
+    "email": "",
+    "address": "",
+    "hasVoted": false
+  }
+]

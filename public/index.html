@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIGITAL VOTING SYSTEM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header id="app-header">
+      <div class="header-inner">
+        <div class="logo">🗳️ <b>YOUR VOTE YOUR VOICE</b></div>
+        <div id="header-user" class="header-user hidden"></div>
+      </div>
+    </header>
+
+    <!-- ══════════════ SCREEN 1: AUTH ══════════════ -->
+    <section id="screen-auth" class="screen active">
+      <div class="screen-content auth-screen">
+        <div class="auth-card animate-slide-up">
+          <div class="auth-hero">
+            <div class="hero-icon">🗳️</div>
+            <h1><b>LIFE MEMBER VOTING PORTAL</b></h1>
+            <p class="subtitle">AUTHENTICATE TO CAST YOUR VOTE</p>
+          </div>
+
+          <!-- Auth Tabs -->
+          <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="tab-id">MEMBER ID</button>
+            <button class="tab-btn" data-tab="tab-otp">MOBILE OTP</button>
+            <button class="tab-btn" data-tab="tab-email">EMAIL OTP</button>
+          </div>
+
+          <!-- Tab: Member ID -->
+          <div id="tab-id" class="tab-panel active">
+            <div class="form-group">
+              <label for="input-member-id">MEMBER ID</label>
+              <input type="text" id="input-member-id" placeholder="e.g. LM0001" autocomplete="off" />
+            </div>
+            <button id="btn-auth-id" class="btn btn-primary btn-full">AUTHENTICATE</button>
+          </div>
+
+          <!-- Tab: Mobile OTP -->
+          <div id="tab-otp" class="tab-panel">
+            <div id="otp-step-phone">
+              <div class="form-group">
+                <label for="input-phone">Registered Mobile Number</label>
+                <input type="tel" id="input-phone" placeholder="e.g. 9876543210" maxlength="10" />
+              </div>
+              <button id="btn-send-otp" class="btn btn-primary btn-full">Send OTP</button>
+            </div>
+            <div id="otp-step-verify" class="hidden">
+              <div class="form-group">
+                <label for="input-otp">Enter OTP</label>
+                <input type="text" id="input-otp" placeholder="4-digit OTP" maxlength="4" />
+              </div>
+              <button id="btn-verify-otp" class="btn btn-primary btn-full">Verify &amp; Continue</button>
+              <button id="btn-otp-back" class="btn btn-ghost btn-full">← Change Number</button>
+            </div>
+          </div>
+
+          <!-- Tab: Email OTP -->
+          <div id="tab-email" class="tab-panel">
+            <div id="email-step-input">
+              <div class="form-group">
+                <label for="input-email-auth">Registered Email Address</label>
+                <input type="email" id="input-email-auth" placeholder="e.g. deepak.verma1@email.com" />
+              </div>
+              <button id="btn-send-email-otp" class="btn btn-primary btn-full">Send Email OTP</button>
+            </div>
+            <div id="email-step-verify" class="hidden">
+              <div class="form-group">
+                <label for="input-email-otp">Enter Email OTP</label>
+                <input type="text" id="input-email-otp" placeholder="6-digit OTP" maxlength="6" />
+              </div>
+              <button id="btn-verify-email-otp" class="btn btn-primary btn-full">Verify &amp; Continue</button>
+              <button id="btn-email-back" class="btn btn-ghost btn-full">← Change Email</button>
+            </div>
+          </div>
+
+          <!-- Auth Error -->
+          <div id="auth-error" class="error-msg hidden"></div>
+          <div id="auth-success" class="success-msg hidden"></div>
+
+          <!-- Testing Hint Info -->
+          <div
+            style="margin-top: 16px; padding: 12px; background: rgba(79, 140, 255, 0.05); border: 1px solid rgba(79, 140, 255, 0.15); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--text-dim); text-align: center;">
+            💡 <strong>Quick Test Credentials:</strong><br />
+            Member ID: <code style="color: var(--accent);">LM0001</code> | Mobile: <code
+              style="color: var(--accent);">9876543210</code><br />
+            (OTP is static code <code style="color: var(--success);">1234</code> for testing)
+          </div>
+
+          <div class="auth-divider"><span>or</span></div>
+          <button id="btn-goto-admin" class="btn btn-ghost btn-full">⚙️ Admin Panel</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SCREEN 2: PROFILE COMPLETION ══════════════ -->
+    <section id="screen-profile" class="screen">
+      <div class="screen-content profile-screen">
+        <div class="auth-card animate-slide-up">
+          <div class="auth-hero">
+            <div class="hero-icon">📋</div>
+            <h1>COMPLETE YOUR PROFILE</h1>
+            <p class="subtitle">Some information is missing from your record</p>
+          </div>
+          <div id="profile-name" class="profile-badge"></div>
+          <div id="profile-fields"></div>
+          <button id="btn-profile-save" class="btn btn-primary btn-full">Save &amp; Continue to Ballot</button>
+          <button id="btn-profile-skip" class="btn btn-ghost btn-full">Skip for Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SCREEN 3: BALLOT ══════════════ -->
+    <section id="screen-ballot" class="screen">
+      <div class="screen-content ballot-screen">
+
+        <!-- Ballot Header -->
+        <div class="ballot-header">
+          <h1 class="text-sm text-dim">LIFE MEMBER VOTING ELECTION</h1>
+
+          <h3 id="title-rural">CAST YOUR VOTE(RURAL REGION)</hS3>
+            <h3 id="title-urban" class="hidden">CAST YOUR VOTE(URBAN REGION)</h3>
+
+
+            <p class="subtitle" id="ballot-voter-name"></p>
+        </div>
+
+        <!-- Ballot Tabs (Hidden for sequential flow) -->
+        <div class="ballot-tabs" style="display: none;">
+          <button class="ballot-tab-btn active" data-ballot="rural">
+            🌾 Rural
+            <span id="counter-rural" class="counter">0 / 14</span>
+          </button>
+          <button class="ballot-tab-btn" data-ballot="urban">
+            🏙️ Urban
+            <span id="counter-urban" class="counter">0 / 16</span>
+          </button>
+        </div>
+
+        <!-- Rural Panel -->
+        <div id="panel-rural" class="ballot-panel active">
+          <div class="panel-info">
+            <p><b>Select exactly 14</b> Candidates From The <b>Rural</b><b> Constituency</b></p>
+            <div class="progress-bar-wrap">
+              <div id="progress-rural" class="progress-bar" style="width:0%"></div>
+            </div>
+            <div id="counter-rural-text" class="counter-text">0 of 14 selected</div>
+          </div>
+          <div id="grid-rural" class="candidates-grid"></div>
+          <div class="panel-actions" style="margin-top: 20px; text-align: center;">
+            <button id="btn-submit-rural" class="btn btn-primary btn-submit" disabled>Submit Rural Vote ➡️</button>
+          </div>
+        </div>
+
+        <!-- Urban Panel -->
+        <div id="panel-urban" class="ballot-panel">
+          <div class="panel-info">
+            <p><b>Select Exactly 16</b> Candidates From The <b>Urban</b><b> Constituency</b></p>
+            <div class="progress-bar-wrap">
+              <div id="progress-urban" class="progress-bar" style="width:0%"></div>
+            </div>
+            <div id="counter-urban-text" class="counter-text">0 of 16 selected</div>
+          </div>
+          <div id="grid-urban" class="candidates-grid"></div>
+          <div class="panel-actions" style="margin-top: 20px; text-align: center;">
+            <button id="btn-submit-urban" class="btn btn-primary btn-submit" disabled>Submit Urban Vote ✅</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SCREEN 4: RESULTS ══════════════ -->
+    <section id="screen-results" class="screen">
+      <div class="screen-content results-screen">
+
+        <div class="results-header">
+          <h1>📊 ELECTION RESULTS</h1>
+          <div id="results-stats" class="results-stats"></div>
+        </div>
+
+        <!-- Results Tabs -->
+        <div class="ballot-tabs">
+          <button class="results-tab-btn active" data-results="results-rural">🌾 Rural Results</button>
+          <button class="results-tab-btn" data-results="results-urban">🏙️ Urban Results</button>
+          <button class="results-tab-btn" data-results="results-admin">⚙️ Admin</button>
+        </div>
+
+        <div id="results-rural" class="results-panel active">
+          <div id="results-rural-list" class="results-list"></div>
+        </div>
+
+        <div id="results-urban" class="results-panel">
+          <div id="results-urban-list" class="results-list"></div>
+        </div>
+
+        <div id="results-admin" class="results-panel">
+          <div class="admin-card animate-slide-up">
+
+            <div class="member-search-section">
+              <h3>REGISTERED MEMBERS</h3>
+
+              <!-- Filter Tabs -->
+              <div id="member-filter-tabs" class="member-filter-tabs"
+                style="display: flex; gap: 6px; margin-top: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                <button class="member-filter-btn active" data-filter="">👥 All <span id="filter-count-all"
+                    class="filter-count">0</span></button>
+                <button class="member-filter-btn" data-filter="voted">🗳️ Voted <span id="filter-count-voted"
+                    class="filter-count">0</span></button>
+                <button class="member-filter-btn" data-filter="not-voted">⏳ Pending <span id="filter-count-not-voted"
+                    class="filter-count">0</span></button>
+                <button class="member-filter-btn" data-filter="nota">⏭️ NOTA <span id="filter-count-nota"
+                    class="filter-count">0</span></button>
+              </div>
+
+              <div class="form-group" style="margin-top: 0; margin-bottom: 12px;">
+                <input type="text" id="input-member-search" placeholder="Search by ID, Name or Phone..." />
+              </div>
+              <div id="admin-members-list-container"
+                style="max-height: 350px; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-dark);">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                  <thead>
+                    <tr
+                      style="border-bottom: 1px solid var(--border); background: var(--bg-card-alt); position: sticky; top: 0; z-index: 1;">
+                      <th style="padding: 10px;">ID</th>
+                      <th style="padding: 10px;">Name</th>
+                      <th style="padding: 10px;">Phone</th>
+                      <th style="padding: 10px;">Status</th>
+                      <th style="padding: 10px; text-align: center;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-members-list-body">
+                    <!-- Dynamic Rows -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;" />
+
+            <h2>⚙️ VOTING WINDOW SETTINGS</h2>
+            <div class="form-group">
+              <label for="admin-open">Voting Opens</label>
+              <input type="datetime-local" id="admin-open" />
+            </div>
+            <div class="form-group">
+              <label for="admin-close">Voting Closes</label>
+              <input type="datetime-local" id="admin-close" />
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+            <h2 style="margin-bottom: 16px;">🔑 RingCaptcha OTP Credentials</h2>
+            <div class="form-group">
+              <label for="admin-ringcaptcha-app-key">RingCaptcha App Key (UM_KEY)</label>
+              <input type="text" id="admin-ringcaptcha-app-key" placeholder="Enter App Key" />
+            </div>
+            <div class="form-group">
+              <label for="admin-ringcaptcha-api-key">RingCaptcha Secret API Key</label>
+              <input type="password" id="admin-ringcaptcha-api-key" placeholder="Enter Secret API Key" />
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;" />
+            <h2 style="margin-bottom: 16px;">📧 SMTP Email OTP Configuration</h2>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 12px;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="admin-smtp-host">SMTP Host</label>
+                <input type="text" id="admin-smtp-host" placeholder="smtp.gmail.com" />
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="admin-smtp-port">SMTP Port</label>
+                <input type="number" id="admin-smtp-port" placeholder="587" />
+              </div>
+              <div class="form-group"
+                style="margin-bottom: 0; display: flex; align-items: center; justify-content: start; gap: 8px;">
+                <input type="checkbox" id="admin-smtp-secure" style="width: auto; margin-top: 20px;" />
+                <label for="admin-smtp-secure"
+                  style="margin-top: 20px; text-transform: none; margin-bottom: 0; font-size: 0.85rem;">Use SSL/TLS
+                  (Port 465)</label>
+              </div>
+            </div>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="admin-smtp-user">SMTP Username / Email</label>
+                <input type="email" id="admin-smtp-user" placeholder="sender@gmail.com" />
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="admin-smtp-pass">SMTP Password / App Password</label>
+                <input type="password" id="admin-smtp-pass" placeholder="Password" />
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label for="admin-smtp-sender">Sender Display Name (Optional)</label>
+                <input type="text" id="admin-smtp-sender"
+                  placeholder="Digital Voting System &lt;sender@gmail.com&gt;" />
+              </div>
+            </div>
+            <button id="btn-admin-save" class="btn btn-primary btn-full">Save Settings</button>
+            <div id="admin-countdown" class="countdown-display"></div>
+            <div id="admin-msg" class="success-msg hidden"></div>
+          </div>
+
+          <div class="admin-card" style="margin-top: 24px;">
+            <h2>👥 Member Management</h2>
+
+            <form id="form-add-member" style="margin-top: 16px;">
+              <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px;">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="admin-member-id">Member ID *</label>
+                  <input type="text" id="admin-member-id" placeholder="e.g. LM2051" required />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="admin-member-name">Full Name *</label>
+                  <input type="text" id="admin-member-name" placeholder="John Doe" required />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="admin-member-phone">Phone Number *</label>
+                  <input type="tel" id="admin-member-phone" placeholder="9876543210" required />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="admin-member-email">Email (Optional)</label>
+                  <input type="email" id="admin-member-email" placeholder="john@example.com" />
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="admin-member-address">Address (Optional)</label>
+                  <input type="text" id="admin-member-address" placeholder="123 Street" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">➕ Add Member</button>
+            </form>
+
+
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 24px 0;" />
+
+
+
+          </div>
+
+          <button id="btn-back-to-auth" class="btn btn-ghost btn-full" style="margin-top:24px;">← Back to Login</button>
+          <button id="btn-view-results" class="btn btn-ghost btn-full" style="margin-top:8px;">📊 View Results</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CONFIRMATION MODAL ══════════════ -->
+    <div id="modal-confirm" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-icon">⚠️</div>
+        <h2>Confirm Your Vote</h2>
+        <p>You are about to submit your vote. This action <strong>cannot be undone</strong>.</p>
+        <div class="modal-summary">
+          <div><strong>Rural:</strong> 1 candidate selected</div>
+          <div><strong>Urban:</strong> 1 candidate selected</div>
+        </div>
+        <div class="modal-actions">
+          <button id="btn-confirm-yes" class="btn btn-submit">✅ Confirm &amp; Submit</button>
+          <button id="btn-confirm-no" class="btn btn-ghost">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ RESUME VOTE MODAL ══════════════ -->
+    <div id="modal-resume-vote" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-icon">👋</div>
+        <h2>Welcome Back</h2>
+        <p id="resume-vote-message" style="text-align: center; margin-bottom: 24px;"></p>
+        <div class="modal-actions">
+          <button id="btn-resume-vote" class="btn btn-primary btn-full">Continue to Ballot</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ REGION SELECTION MODAL ══════════════ -->
+    <div id="modal-region-select" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-icon">🌍</div>
+        <h2>Select Voting Region</h2>
+        <p style="text-align: center; margin-bottom: 24px;">Are you willing to vote in Rural or Urban region? Or choose
+          NOTA to skip.</p>
+        <div class="modal-actions" style="flex-direction: column; gap: 12px;">
+          <button id="btn-region-both" class="btn btn-primary btn-full">Both Regions</button>
+          <button id="btn-region-rural" class="btn btn-primary btn-full">Rural Region Only</button>
+          <button id="btn-region-urban" class="btn btn-primary btn-full">Urban Region Only</button>
+          <button id="btn-region-nota" class="btn btn-ghost btn-full" style="margin-top: 10px;">NOTA (Skip
+            Voting)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ ADMIN LOGIN MODAL ══════════════ -->
+    <div id="modal-admin-login" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-icon">🔒</div>
+        <h2>Admin Authentication Required</h2>
+        <p>Please enter the administrative credentials to continue.</p>
+        <form id="form-admin-login" style="margin-top: 16px; text-align: left;">
+          <div class="form-group">
+            <label for="input-admin-username">Username</label>
+            <input type="text" id="input-admin-username" placeholder="e.g. admin" required autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="input-admin-password">Password</label>
+            <input type="password" id="input-admin-password" placeholder="Enter password" required />
+          </div>
+          <div id="admin-login-error" class="error-msg hidden" style="margin-bottom: 16px; margin-top: 0;"></div>
+          <div class="modal-actions" style="margin-top: 20px;">
+            <button type="submit" class="btn btn-primary btn-full">🔑 Login as Admin</button>
+            <button type="button" id="btn-admin-login-cancel" class="btn btn-ghost btn-full">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ══════════════ TOAST ══════════════ -->
+    <div id="toast" class="toast hidden"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
